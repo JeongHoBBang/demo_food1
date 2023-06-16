@@ -4,5 +4,8 @@ import lombok.Data;
 
 @Data
 public class MenuInsDto {
+    private String menu;
+    private int price;
     private Long icategory;
+    private Long imenu;
 }

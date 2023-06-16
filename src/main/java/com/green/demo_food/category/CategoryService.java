@@ -14,10 +14,10 @@ public class CategoryService {
     public Long postCategory(CategoryInsDto dto){
         CategoryEntity entity = new CategoryEntity();
         entity.setCategory(dto.getCategory());
-        int result = mapper.selCategory(entity);
-        if (result ==1){
-            mapper.selCategory(entity);
+        Long result = mapper.selCategory(entity);
+        if (result == null) {
+            mapper.insCategory(entity);
         }
-        return mapper.insCategory(entity);
+        return mapper.selCategory(entity);
     }
 }

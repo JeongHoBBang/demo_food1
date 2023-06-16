@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CategoryMapper {
-    Long insCategory(CategoryEntity entity);
-    int selCategory(CategoryEntity entity);
+    int insCategory(CategoryEntity entity);
+    Long selCategory(CategoryEntity entity);
 
 }

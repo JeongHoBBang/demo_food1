@@ -8,8 +8,8 @@
         set category = #{category}
     </insert>
     <select id="selCategory">
-        select category
+        select icategory, category
         from d_category
-        where icategory = #{icategory}
+        where category = #{category}
     </select>
 </mapper>

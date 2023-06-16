@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.demo_food.menu.MenuMapper">
-    <insert id="insMenu">
+    <insert id="insMenu" useGeneratedKeys="true" keyProperty="imenu">
         insert into d_menu
         set menu=#{menu}
         ,price=#{price}
-        where icategory = icategory
+        ,icategory=#{icategory}
     </insert>
 
 </mapper>
