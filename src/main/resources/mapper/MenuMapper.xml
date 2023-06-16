@@ -19,6 +19,14 @@
         from d_menu
         where imenu=#{imenu}
     </select>
-
-
+    <update id="chooseMenuCount">
+        UPDATE d_menu
+        SET number_selections =number_selections + 1
+        WHERE imenu=#{imenu}
+    </update>
+    <select id="delyn">
+        select del_yn
+        from d_menu
+        where imenu=#{imenu}
+    </select>
 </mapper>

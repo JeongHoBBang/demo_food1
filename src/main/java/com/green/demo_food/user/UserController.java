@@ -3,6 +3,7 @@ package com.green.demo_food.user;
 import com.green.demo_food.user.model.UserEntity;
 import com.green.demo_food.user.model.UserInsDto;
 import com.green.demo_food.user.model.UserVo;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,7 @@ public class UserController {
         this.service = service;
     }
     @PostMapping
+    @Operation(summary = "유저생성")
     public UserVo postUser(@RequestBody UserInsDto dto){
         return service.postUser(dto);
     }
