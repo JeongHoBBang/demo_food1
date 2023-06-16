@@ -3,6 +3,7 @@ package com.green.demo_food.user;
 import com.green.demo_food.user.model.UserEntity;
 import com.green.demo_food.user.model.UserInsDto;
 import com.green.demo_food.user.model.UserVo;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +30,8 @@ public class UserService {
         }
         return mapper.selUser(entity);
 
+    }
+    public List<UserVo> voUser(){
+        return mapper.voUser();
     }
 }

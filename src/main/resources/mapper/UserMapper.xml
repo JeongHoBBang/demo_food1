@@ -17,4 +17,9 @@
         from d_user
         where iuser=#{iuser}
     </select>
+    <select id="voUser">
+        select iuser, name
+        from d_user
+        order by iuser
+    </select>
 </mapper>

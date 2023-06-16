@@ -5,6 +5,7 @@ import com.green.demo_food.menu.model.MenuInsDto;
 import com.green.demo_food.menu.model.MenuUpdDto;
 import com.green.demo_food.menu.model.MenuVo;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/todo/menu")
+@Tag(name = "메뉴")
 public class MenuController {
     private final MenuService service;
     @PostMapping

@@ -12,4 +12,9 @@
         from d_category
         where category = #{category}
     </select>
+    <select id="voCategory">
+        select icategory, category
+        from d_category
+        order by icategory
+    </select>
 </mapper>
