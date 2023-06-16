@@ -9,5 +9,16 @@
         ,price=#{price}
         ,icategory=#{icategory}
     </insert>
+    <select id="selMenu">
+        select imenu, menu, price
+        from d_menu
+        where del_yn = 0;
+    </select>
+    <select id="findPrice" resultType="int">
+        select price
+        from d_menu
+        where imenu=#{imenu}
+    </select>
+
 
 </mapper>
