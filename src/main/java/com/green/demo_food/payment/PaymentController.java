@@ -1,14 +1,12 @@
 package com.green.demo_food.payment;
 
-import com.green.demo_food.payment.model.PaymentIUpdDto;
-import com.green.demo_food.payment.model.PaymentInsDto;
+import com.green.demo_food.payment.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/roulette")
@@ -27,8 +25,19 @@ public class PaymentController {
             return 0;
         }
 
+    }
 
-        //0이 리턴이면 이달 한도 초과
+    @GetMapping("/{iuser}")
+    @Operation(summary = "유저 소비 불러오기")
+    public List<PaymentSelVo> getUserPayment(@PathVariable Long iuser  ){
+        PaymentSelDto dto = new PaymentSelDto();
+        dto.setIuser(iuser);
+        return service.getUserPayment(dto);
+    }
 
+    @PatchMapping
+    @Operation(summary = "별점등록")
+    public int setStarRating(@RequestBody PaymentStarDto dto){
+        return service.setStarRating(dto);
     }
 }

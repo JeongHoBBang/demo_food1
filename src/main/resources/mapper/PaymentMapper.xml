@@ -12,5 +12,26 @@
         ,current_menu_price =#{currentMenuPrice}
         ,star_rating =#{starRating}
     </insert>
+    <select id="getPayment">
+        SELECT A.ipayment,B.name,C.menu,C.price,A.remainder_balance remainderBalance,A.payment_at,A.star_rating
+        FROM d_payment A
+        INNER JOIN (
+        SELECT y.imanagement,x.iuser,x.name
+        FROM d_user x
+        INNER JOIN d_management y
+        ON x.iuser=y.iuser
+        ) B
+        ON A.imanagement=B.imanagement
+        INNER JOIN d_menu C
+        ON A.imenu=C.imenu
+        WHERE B.iuser=#{iuser}
+    </select>
+    
+    <update id="setStarRating">
+
+        update d_payment
+        set star_rating =#{starRating}
+        where ipayment=#{ipayment}
+    </update>
 
 </mapper>
