@@ -2,11 +2,12 @@ package com.green.demo_food.payment;
 
 import com.green.demo_food.management.ManagementMapper;
 import com.green.demo_food.menu.MenuMapper;
-import com.green.demo_food.payment.model.PaymentEntity;
-import com.green.demo_food.payment.model.PaymentInsDto;
+import com.green.demo_food.payment.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -37,6 +38,16 @@ public class PaymentService {
         }
         managementMapper.exchangeBalance(entity);
         return result;
+
+    }
+    public List<PaymentSelVo> getUserPayment(PaymentSelDto dto){
+        return mapper.getPayment(dto);
+    }
+
+    public int setStarRating(PaymentStarDto dto){
+
+        return mapper.setStarRating(dto);
+
 
     }
 }

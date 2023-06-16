@@ -14,7 +14,7 @@
     </insert>
     <select id="getMonthManagement" resultType="ManagementSelVo">
         SELECT
-        A.iuser,B.name,A.year,A.month
+        A.imanagement,A.iuser,B.name,A.year,A.month
         ,A.month_limit monthLimit,A.balance,A.expense
         FROM d_management A
         INNER JOIN d_user B
