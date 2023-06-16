@@ -7,4 +7,14 @@
         insert into d_user
         set name = #{name}
     </insert>
+    <select id="findUser" resultType="Long">
+        select iuser
+        from d_user
+        where name = #{name}
+    </select>
+    <select id="selUser">
+        select iuser, name
+        from d_user
+        where iuser=#{iuser}
+    </select>
 </mapper>
