@@ -14,6 +14,7 @@ public class CategoryController {
     private final CategoryService service;
     @PostMapping
     public Long postCategory(@RequestBody CategoryInsDto dto){
+
         return service.postCategory(dto);
     }
 }
