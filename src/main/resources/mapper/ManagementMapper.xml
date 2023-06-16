@@ -18,6 +18,18 @@
         ,A.month_limit monthLimit,A.balance,A.expense
         FROM d_management A
         INNER JOIN d_user B
+        ON A.iuser=B.iuser
         where B.iuser=#{iuser} AND A.year = #{year} and A.month=#{month}
     </select>
+    <select id="getUserBalance" resultType="int">
+        select balance
+        from d_management
+        where imanagement=#{imanagement}
+    </select>
+    <update id="exchangeBalance">
+        update d_management
+        set balance=balance - #{currentMenuPrice}
+        ,expense=expense + #{currentMenuPrice}
+        where imanagement=#{imanagement}
+    </update>
 </mapper>

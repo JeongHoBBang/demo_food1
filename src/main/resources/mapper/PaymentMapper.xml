@@ -3,13 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.demo_food.payment.PaymentMapper">
-    <insert id="insPayment" useGeneratedKeys="true" keyProperty="ipayment">
+    <insert id="insPayment" >
         insert into d_payment
-        set imanagement=#{imanagement}
+        set
+        imanagement=#{imanagement}
         ,imenu=#{imenu}
-        ,remainder_balance=#{remainderBalance}
-        ,current_menu_price=#{currentMenuPrice}
-        ,star_rating=#{starRating}
+        ,remainder_balance =#{remainderBalance}
+        ,current_menu_price =#{currentMenuPrice}
+        ,star_rating =#{starRating}
     </insert>
 
 </mapper>
