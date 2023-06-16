@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class ManagementSelVo {
+    private Long imanagement;
     private Long iuser;
     private String name;
     private String year;
