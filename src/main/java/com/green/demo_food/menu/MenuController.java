@@ -1,9 +1,6 @@
 package com.green.demo_food.menu;
 
-import com.green.demo_food.menu.model.MenuEntity;
-import com.green.demo_food.menu.model.MenuInsDto;
-import com.green.demo_food.menu.model.MenuUpdDto;
-import com.green.demo_food.menu.model.MenuVo;
+import com.green.demo_food.menu.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +28,13 @@ public class MenuController {
     @Operation(summary = "메뉴")
     public List<MenuVo> selMenu(){
         return service.selMenu();
+    }
+    @PatchMapping("/{imenu}")
+    @Operation(summary = "가격수정")
+    public int updPrice(@PathVariable Long imenu, int price){
+        MenuUpdPriceDto dto = new MenuUpdPriceDto();
+        dto.setImenu(imenu);
+        dto.setPrice(price);
+        return service.updPrice(dto);
     }
 }
