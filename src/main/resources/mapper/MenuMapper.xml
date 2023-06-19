@@ -10,7 +10,7 @@
         ,icategory=#{icategory}
     </insert>
     <select id="selMenu">
-        select imenu, menu, price
+        select icategory, imenu, menu, price
         from d_menu
         where del_yn = 0;
     </select>

@@ -6,4 +6,5 @@ import lombok.Data;
 public class CategoryEntity {
     private Long icategory;
     private String category;
+    private int delyn;
 }

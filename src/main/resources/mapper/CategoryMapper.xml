@@ -17,4 +17,11 @@
         from d_category
         order by icategory
     </select>
+    <update id="delCategory">
+        update d_category
+
+
+
+
+    </update>
 </mapper>
