@@ -1,9 +1,6 @@
 package com.green.demo_food.menu;
 
-import com.green.demo_food.menu.model.MenuEntity;
-import com.green.demo_food.menu.model.MenuInsDto;
-import com.green.demo_food.menu.model.MenuUpdDto;
-import com.green.demo_food.menu.model.MenuVo;
+import com.green.demo_food.menu.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +28,8 @@ public class MenuService {
     }
     public List<MenuVo> selMenu(){
         return mapper.selMenu();
+    }
+    public int updPrice(MenuUpdPriceDto dto){
+        return mapper.updPrice(dto);
     }
 }

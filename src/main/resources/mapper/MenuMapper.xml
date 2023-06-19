@@ -34,4 +34,9 @@
         from d_menu
         where menu=#{menu}
     </select>
+    <update id="updPrice">
+        update d_menu
+        set price = #{price}
+        where imenu=#{imenu}
+    </update>
 </mapper>
