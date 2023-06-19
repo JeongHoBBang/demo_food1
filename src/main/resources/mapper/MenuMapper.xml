@@ -29,4 +29,9 @@
         from d_menu
         where imenu=#{imenu}
     </select>
+    <select id="findMenu" resultType="Long">
+        select imenu
+        from d_menu
+        where menu=#{menu}
+    </select>
 </mapper>

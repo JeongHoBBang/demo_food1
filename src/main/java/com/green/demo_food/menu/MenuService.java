@@ -13,12 +13,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MenuService {
     private final MenuMapper mapper;
-    public int postMenu(MenuInsDto dto){
+    public Long postMenu(MenuInsDto dto) {
         MenuEntity entity = new MenuEntity();
-        entity.setMenu(entity.getMenu());
-        entity.setPrice(entity.getPrice());
-        entity.setIcategory(entity.getIcategory());
-        return mapper.insMenu(entity);
+        entity.setMenu(dto.getMenu());
+        entity.setPrice(dto.getPrice());
+        entity.setIcategory(dto.getIcategory());
+        Long result = mapper.findMenu(entity);
+        if (result == null) {
+            mapper.insMenu(entity);
+            return entity.getImenu();
+        } else {
+            return result;
+        }
     }
     public int MenuCount(MenuUpdDto dto){
         return mapper.chooseMenuCount(dto);

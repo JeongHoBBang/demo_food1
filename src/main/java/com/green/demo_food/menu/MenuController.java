@@ -19,7 +19,7 @@ public class MenuController {
     private final MenuService service;
     @PostMapping
     @Operation(summary = "메뉴생성")
-    public int postMenu(@RequestBody MenuInsDto dto){
+    public Long postMenu(@RequestBody MenuInsDto dto){
         return service.postMenu(dto);
     }
     @PatchMapping

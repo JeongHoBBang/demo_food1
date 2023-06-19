@@ -15,4 +15,5 @@ public interface MenuMapper {
     int findPrice(PaymentEntity entity);
     int chooseMenuCount(MenuUpdDto dto);
     List<MenuVo> selMenu();
+    Long findMenu(MenuEntity entity);
 }
