@@ -11,7 +11,7 @@ import java.util.List;
 
 @Mapper
 public interface MenuMapper {
-    int insMenu(MenuInsDto dto);
+    int insMenu(MenuEntity entity);
     int findPrice(PaymentEntity entity);
     int chooseMenuCount(MenuUpdDto dto);
     List<MenuVo> selMenu();
