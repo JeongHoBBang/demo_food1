@@ -22,11 +22,9 @@ public class ManagementController {
     }
     @GetMapping
     @Operation(summary = "이달의 목표 불러오기")
-    public ManagementSelVo getMonthManagement(@RequestParam Long iuser,@RequestParam String year,@RequestParam int month){
+    public ManagementSelVo getMonthManagement(@RequestParam Long iuser){
         ManagementSelDto dto = new ManagementSelDto();
         dto.setIuser(iuser);
-        dto.setMonth(month);
-        dto.setYear(year);
         return service.getMonthManagement(dto);
     }
 }

@@ -21,10 +21,10 @@
         ON A.iuser=B.iuser
         where B.iuser=#{iuser} AND A.year = #{year} and A.month=#{month}
     </select>
-    <select id="getUserBalance" resultType="int">
-        select balance
-        from d_management
-        where imanagement=#{imanagement}
+    <select id="getUserBalance" resultType="ManagementBalanceVo">
+        SELECT imanagement,balance
+        FROM d_management
+        WHERE iuser=#{iuser} AND YEAR=#{year} AND MONTH=#{month}
     </select>
     <update id="exchangeBalance">
         update d_management
