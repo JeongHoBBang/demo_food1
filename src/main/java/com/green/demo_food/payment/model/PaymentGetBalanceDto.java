@@ -3,7 +3,8 @@ package com.green.demo_food.payment.model;
 import lombok.Data;
 
 @Data
-public class PaymentInsDto {
+public class PaymentGetBalanceDto {
     private Long iuser;
-    private Long imenu;
+    private String year;
+    private int month;
 }
