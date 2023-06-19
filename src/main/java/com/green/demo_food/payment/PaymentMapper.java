@@ -13,4 +13,5 @@ public interface PaymentMapper {
     int insPayment(PaymentEntity entity);
     List<PaymentSelVo> getPayment(PaymentSelDto dto);
     int setStarRating(PaymentStarDto dto);
+    int delPayment(PaymentEntity entity);
 }

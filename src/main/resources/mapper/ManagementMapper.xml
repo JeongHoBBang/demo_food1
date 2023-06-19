@@ -32,4 +32,6 @@
         ,expense=expense + #{currentMenuPrice}
         where imanagement=#{imanagement}
     </update>
+    
+
 </mapper>

@@ -34,4 +34,9 @@
         where ipayment=#{ipayment}
     </update>
 
+    <delete id="delPayment">
+        delete d_payment
+        where ipayment=#{ipayment} and imanagement=#{imanagement}
+    </delete>
+
 </mapper>
